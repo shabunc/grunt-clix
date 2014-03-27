@@ -1,30 +1,30 @@
 {
-  "name": "grunt-cli",
+  "name": "grunt-clix",
   "description": "The grunt command line interface.",
   "version": "0.1.13",
-  "author": "Grunt Team",
+  "author": "Shahen Ohanjanyan",
   "homepage": "http://gruntjs.com/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gruntjs/grunt-cli.git"
+    "url": "https://github.com/shabunc/grunt-clix.git"
   },
   "bugs": {
-    "url": "http://github.com/gruntjs/grunt-cli/issues"
+    "url": "https://github.com/shabunc/grunt-clix/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/gruntjs/grunt-cli/blob/master/LICENSE-MIT"
+      "url": "https://github.com/shabunc/grunt-clix/blob/master/LICENSE-MIT"
     }
   ],
   "bin": {
-    "grunt": "bin/grunt"
+    "gruntx": "bin/gruntx"
   },
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "node bin/grunt test"
+    "test": "node bin/gruntx test"
   },
   "preferGlobal": true,
   "dependencies": {
