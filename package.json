@@ -1,7 +1,7 @@
 {
   "name": "grunt-clix",
   "description": "The grunt command line interface.",
-  "version": "0.1.13",
+  "version": "0.1.13.1",
   "author": "Shahen Ohanjanyan",
   "homepage": "http://gruntjs.com/",
   "repository": {

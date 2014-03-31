@@ -30,7 +30,7 @@ if ('completion' in options) {
 
 
 if ('libpath' in options) {
-    var libpath = options.libpath;
+    var libpath = path.resolve(options.libpath);
     try {
         gruntpath = resolve('grunt', {
             basedir: libpath
