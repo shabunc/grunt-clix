@@ -14,7 +14,6 @@ var completion = require('../lib/completion');
 var info = require('../lib/info');
 var path = require('path');
 
-
 var basedir = process.cwd();
 var gruntpath;
 
@@ -29,16 +28,28 @@ if ('completion' in options) {
   basedir = path.resolve(options.base);
 }
 
-try {
-  gruntpath = resolve('grunt', {basedir: basedir});
-} catch (ex) {
-  gruntpath = findup('lib/grunt.js');
-  // No grunt install found!
-  if (!gruntpath) {
-    if (options.version) { process.exit(); }
-    if (options.help) { info.help(); }
-    info.fatal('Unable to find local grunt.', 99);
-  }
+
+if ('libpath' in options) {
+    var libpath = options.libpath;
+    try {
+        gruntpath = resolve('grunt', {
+            basedir: libpath
+        });
+    } catch(e) {
+        info.fatal('Unable to find grunt set via libpath ( ' + libpath  + ' )', 99);
+    }
+} else {
+    try {
+      gruntpath = resolve('grunt', {basedir: basedir});
+    } catch (ex) {
+      gruntpath = findup('lib/grunt.js');
+      // No grunt install found!
+      if (!gruntpath) {
+        if (options.version) { process.exit(); }
+        if (options.help) { info.help(); }
+        info.fatal('Unable to find local grunt.', 99);
+      }
+    }
 }
 
 // Everything looks good. Require local grunt and run it.
