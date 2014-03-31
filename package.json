@@ -18,13 +18,13 @@
     }
   ],
   "bin": {
-    "gruntx": "bin/gruntx"
+    "gx": "bin/gruntx"
   },
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "node bin/gruntx test"
+    "test": "node bin/gx test"
   },
   "preferGlobal": true,
   "dependencies": {
